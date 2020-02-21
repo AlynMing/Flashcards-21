@@ -9,6 +9,7 @@
 
 ### App Walk-through
 <img src=https://imgur.com/a/MUvW2cR width=200><br>
+<blockquote class="imgur-embed-pub" lang="en" data-id="QEITrDl"><a href="//imgur.com/QEITrDl">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 ## Required
 - [x] Create New Project in Xcode
