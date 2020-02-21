@@ -8,7 +8,7 @@
 `TODO: Lab 1 of flashcards app. Create one flashcard with a question and answer. Answer is revealed when tap gesture is recognized.
 
 ### App Walk-through
-<img src=https://imgur.com/QEITrDl width=200><br>
+<img src="https://imgur.com/QEITrDl" width=200><br>
 
 ## Required
 - [x] Create New Project in Xcode
