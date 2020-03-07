@@ -3,7 +3,7 @@
 ### App Description
 Creating new flashcards 
 
-### App Walk-though
+### App Walk-through
 
 <img src=https://i.imgur.com/eu32yoP.gif width=200><br>
 
