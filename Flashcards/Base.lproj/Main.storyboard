@@ -15,7 +15,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZBf-7t-Xgt">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QYS-pG-Lxj">
                                 <rect key="frame" x="43" y="334" width="328" height="228"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
@@ -27,7 +27,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is E in Hexadecimal?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcm-K4-INn">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="What is E in decimal?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcm-K4-INn">
                                         <rect key="frame" x="0.0" y="0.0" width="328" height="228"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -37,28 +37,100 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="FDs-dF-j60" appends="YES" id="BlF-9g-UIE"/>
-                                </connections>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U7S-oI-CVo">
+                                <rect key="frame" x="192" y="758" width="37" height="84"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <state key="normal" title="+"/>
+                                <connections>
+                                    <segue destination="5ap-F1-6R3" kind="presentation" id="5rz-Xw-VJ6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="TRh-t4-ExS" appends="YES" id="bay-5u-2Wn"/>
+                        </connections>
                     </view>
                     <connections>
-                        <outlet property="backLabel" destination="wAc-4E-AZM" id="w4K-RZ-GkB"/>
-                        <outlet property="frontLabel" destination="Gcm-K4-INn" id="lAD-41-Luw"/>
+                        <outlet property="backLabel" destination="wAc-4E-AZM" id="TD4-OQ-AKI"/>
+                        <outlet property="frontLabel" destination="Gcm-K4-INn" id="Iuc-NM-meg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="FDs-dF-j60">
+                <tapGestureRecognizer id="TRh-t4-ExS">
                     <connections>
-                        <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="eJd-ZY-Rry"/>
+                        <action selector="didTapOnFlashcard:" destination="BYZ-38-t0r" id="6iW-zj-wDU"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="126.5625"/>
+            <point key="canvasLocation" x="-472" y="-113"/>
+        </scene>
+        <!--Creation View Controller-->
+        <scene sceneID="KqP-JY-JV9">
+            <objects>
+                <viewController id="A5C-Dg-flA" customClass="CreationViewController" customModule="Flashcards" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2xB-SF-Amg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Question" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="O5O-S0-2zB">
+                                <rect key="frame" x="77" y="196" width="264" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Answer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CIl-ha-ddx">
+                                <rect key="frame" x="77" y="399" width="264" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3ev-p0-B9p"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jLA-Ff-JXt">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="hPc-Aa-V5a">
+                            <connections>
+                                <action selector="didTapOnCancel:" destination="A5C-Dg-flA" id="gvH-i9-dS3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="fdm-ya-qGi">
+                            <connections>
+                                <action selector="didTapOnDone:" destination="A5C-Dg-flA" id="sRZ-I8-XeN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="answerTextField" destination="CIl-ha-ddx" id="5HZ-p4-iqM"/>
+                        <outlet property="questionTextField" destination="O5O-S0-2zB" id="JRr-A5-UXH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JGk-nC-ewS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1423.1884057971015" y="-113.16964285714285"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="7nj-bG-gSg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ap-F1-6R3" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wWi-Js-udf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="A5C-Dg-flA" kind="relationship" relationship="rootViewController" id="bmV-e0-ymU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bTf-wf-Sb7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="513.04347826086962" y="-113.16964285714285"/>
         </scene>
     </scenes>
 </document>
