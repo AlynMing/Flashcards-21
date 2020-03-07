@@ -27,12 +27,12 @@ class ViewController: UIViewController {
     }
     
     func updateFlashcard(question: String, answer: String) {
-        //print("First yay")
         frontLabel.text = question
         backLabel.text = answer
-        //print("You did it!")
     }
     
+    //Prevents app from crashing when textfields are empty
+    //and "Done" is hit
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // We know the destination of the segue is the Navigation Controller
         let navigationController = segue.destination as! UINavigationController

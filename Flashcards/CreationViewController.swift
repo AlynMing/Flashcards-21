@@ -32,10 +32,8 @@ class CreationViewController: UIViewController {
         let answerText = answerTextField.text
         
         flashcardsController.updateFlashcard(question: questionText!, answer: answerText!)
-        //print("What the heck")
         
         dismiss(animated: true)
-        //print("!!!!")
     }
     /*
     // MARK: - Navigation
