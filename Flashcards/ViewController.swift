@@ -12,10 +12,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        //Round corners
+        card.layer.cornerRadius = 20.0
+        frontLabel.layer.cornerRadius = 20.0
+        frontLabel.clipsToBounds = true
+        backLabel.layer.cornerRadius = 20.0
+        backLabel.clipsToBounds = true
+        
+        //Add shadows
+        card.layer.shadowRadius = 15.0
+        card.layer.shadowOpacity = 0.2
+        frontLabel.layer.shadowRadius = 15.0
+        frontLabel.layer.shadowOpacity = 0.2
+        backLabel.layer.shadowRadius = 15.0
+        backLabel.layer.shadowOpacity = 0.2
     }
 
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var frontLabel: UILabel!
+    @IBOutlet weak var card: UIView!
     
     @IBAction func didTapOnFlashcard(_ sender: Any) {
         if (frontLabel.isHidden == true) {
