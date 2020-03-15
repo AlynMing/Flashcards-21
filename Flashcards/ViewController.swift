@@ -33,6 +33,19 @@ class ViewController: UIViewController {
         backLabel.layer.shadowRadius = 15.0
         backLabel.layer.shadowOpacity = 0.2
         
+        //Option Buttons:
+        //Round Corners:
+        btnOptionOne.layer.cornerRadius = 20.0
+        btnOptionTwo.layer.cornerRadius = 20.0
+        btnOptionThree.layer.cornerRadius = 20.0
+        //Add Border:
+        btnOptionOne.layer.borderWidth = 3.0
+        btnOptionOne.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        btnOptionTwo.layer.borderWidth = 3.0
+        btnOptionTwo.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        btnOptionThree.layer.borderWidth = 3.0
+        btnOptionThree.layer.borderColor = #colorLiteral(red: 0.2588235438, green: 0.7568627596, blue: 0.9686274529, alpha: 1)
+        
         // Read saved flashcards
         readSavedFlashcards()
         
@@ -49,6 +62,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var backLabel: UILabel!
     @IBOutlet weak var frontLabel: UILabel!
     @IBOutlet weak var card: UIView!
+    
+    @IBOutlet weak var btnOptionOne: UIButton!
+    @IBOutlet weak var btnOptionTwo: UIButton!
+    @IBOutlet weak var btnOptionThree: UIButton!
     
     @IBOutlet weak var prevButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
@@ -67,6 +84,23 @@ class ViewController: UIViewController {
         else {
             frontLabel.isHidden = true
         }
+    }
+    
+    // Reveal answer when correct button (second button)
+    //is clicked
+    @IBAction func didTapOptionOne(_ sender: Any) {
+        btnOptionOne.isHidden = true
+    }
+    @IBAction func didTapOptionTwo(_ sender: Any) {
+        if (frontLabel.isHidden == true) {
+            frontLabel.isHidden = false
+        }
+        else {
+            frontLabel.isHidden = true
+        }
+    }
+    @IBAction func didTapOptionThree(_ sender: Any) {
+        btnOptionThree.isHidden = true
     }
     
     func updateFlashcard(question: String, answer: String) {
