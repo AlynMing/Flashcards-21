@@ -10,6 +10,8 @@ import UIKit
 struct Flashcard {
     var question: String
     var answer: String
+    var extraAns1: String
+    var extraAns2: String
 }
 
 class ViewController: UIViewController {
@@ -51,7 +53,7 @@ class ViewController: UIViewController {
         
         // Adding our initial flashcard if needed
         if flashcards.count == 0 {
-          updateFlashcard(question: "What is E in decimal?", answer: "14")
+            updateFlashcard(question: "What is E in decimal?", answer: "14", extraAns1: "13", extraAns2: "15")
         } else {
             updateLabels()
             updateNextPrevButtons()
@@ -103,8 +105,8 @@ class ViewController: UIViewController {
         btnOptionThree.isHidden = true
     }
     
-    func updateFlashcard(question: String, answer: String) {
-        let flashcard = Flashcard(question: question, answer: answer)
+    func updateFlashcard(question: String, answer: String, extraAns1: String, extraAns2: String) {
+        let flashcard = Flashcard(question: question, answer: answer, extraAns1: extraAns1, extraAns2: extraAns2)
         //frontLabel.text = flashcard.question
         //backLabel.text = flashcard.answer
         
@@ -140,6 +142,11 @@ class ViewController: UIViewController {
         
         // We set the flashcardsController property to self
         creationController.flashcardsController = self
+        
+        if segue.identifier == "EditSegue" {
+            creationController.initialQuestion = frontLabel.text
+            creationController.initialAnswer = backLabel.text
+        }
     }
     
     @IBAction func didTapOnPrev(_ sender: Any) {
@@ -187,12 +194,15 @@ class ViewController: UIViewController {
         // Update labels
         frontLabel.text = currentFlashcard.question
         backLabel.text = currentFlashcard.answer
+        btnOptionOne.setTitle(currentFlashcard.extraAns1, for: .normal)
+        btnOptionTwo.setTitle(currentFlashcard.answer, for: .normal)
+        btnOptionThree.setTitle(currentFlashcard.extraAns2, for: .normal)
     }
     
     func saveAllFlashcardsToDisk() {
         // From flashcard array to dictionary array
         let dictionaryArray = flashcards.map { (card) -> [String: String] in
-            return ["question": card.question, "answer": card.answer]
+            return ["question": card.question, "answer": card.answer, "extraAns1": card.extraAns1, "extraAns2": card.extraAns2]
         }
         // Save array on disk using UserDefaults
         //UserDefaults.standard.set(flashcards, forKey: "flashcards")
@@ -209,7 +219,7 @@ class ViewController: UIViewController {
         if let dictionaryArray = UserDefaults.standard.array(forKey: "flashcards") as? [[String: String]] {
             //In here we know for sure we have a dictionary array
             let savedCards = dictionaryArray.map {dictionary -> Flashcard in
-                return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!)
+                return Flashcard(question: dictionary["question"]!, answer: dictionary["answer"]!, extraAns1: dictionary["extraAns1"]!, extraAns2: dictionary["extraAns2"]!)
                 }
             
             // Put all these cards in our flashcards array
