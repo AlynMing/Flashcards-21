@@ -49,7 +49,12 @@ class CreationViewController: UIViewController {
             let okAction = UIAlertAction(title: "Ok", style: .default)
             alert.addAction(okAction)
         } else {
-            flashcardsController.updateFlashcard(question: questionText!, answer: answerText!, extraAns1: extraAns1Text!, extraAns2: extraAns2Text!)
+            // See if it's existing
+            var isExisting = false
+            if initialQuestion != nil {
+                isExisting = true
+            }
+            flashcardsController.updateFlashcard(question: questionText!, answer: answerText!, extraAns1: extraAns1Text!, extraAns2: extraAns2Text!, isExisting: isExisting)
             
             dismiss(animated: true)
         }

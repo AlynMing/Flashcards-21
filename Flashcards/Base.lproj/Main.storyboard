@@ -43,6 +43,14 @@
                                             <segue destination="5ap-F1-6R3" kind="presentation" identifier="EditSegue" id="OB6-ja-ZP2"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tzU-TM-ukt">
+                                        <rect key="frame" x="8" y="8" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="❌"/>
+                                        <connections>
+                                            <action selector="didTapOnDelete:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uoH-b4-fDv"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </view>
@@ -148,8 +156,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra Answer #1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="I3C-tc-JBh">
-                                <rect key="frame" x="77" y="420" width="264" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Extra Answer #1" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="i8K-J7-yE1">
+                                <rect key="frame" x="77" y="421" width="264" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -178,7 +186,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="answerTextField" destination="CIl-ha-ddx" id="5HZ-p4-iqM"/>
-                        <outlet property="extraAnswer1TextField" destination="h50-WB-2US" id="5TK-ww-7K6"/>
+                        <outlet property="extraAnswer1TextField" destination="i8K-J7-yE1" id="ZuE-by-Y63"/>
                         <outlet property="extraAnswer2TextField" destination="h50-WB-2US" id="qWM-pA-978"/>
                         <outlet property="questionTextField" destination="O5O-S0-2zB" id="JRr-A5-UXH"/>
                     </connections>
