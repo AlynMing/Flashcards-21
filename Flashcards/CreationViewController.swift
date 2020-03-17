@@ -18,6 +18,8 @@ class CreationViewController: UIViewController {
         // Do any additional setup after loading the view.
         questionTextField.text = initialQuestion
         answerTextField.text = initialAnswer
+        extraAnswer1TextField.text = initialExtraAns1
+        extraAnswer2TextField.text = initialExtraAns2
     }
     
     @IBAction func didTapOnCancel(_ sender: Any) {
@@ -28,6 +30,8 @@ class CreationViewController: UIViewController {
     @IBOutlet weak var answerTextField: UITextField!
     var initialQuestion: String?
     var initialAnswer: String?
+    var initialExtraAns1: String?
+    var initialExtraAns2: String?
     @IBOutlet weak var extraAnswer1TextField: UITextField!
     @IBOutlet weak var extraAnswer2TextField: UITextField!
     

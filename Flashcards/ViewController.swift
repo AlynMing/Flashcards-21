@@ -151,6 +151,8 @@ class ViewController: UIViewController {
         if segue.identifier == "EditSegue" {
             creationController.initialQuestion = frontLabel.text
             creationController.initialAnswer = backLabel.text
+            creationController.initialExtraAns1 = btnOptionOne.currentTitle
+            creationController.initialExtraAns2 = btnOptionThree.currentTitle
         }
     }
     
